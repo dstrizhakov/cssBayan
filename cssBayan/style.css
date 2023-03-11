@@ -9,8 +9,46 @@ body {
 	font-size: 16px;
 	line-height: 150%;
 	background-color: aliceblue;
+	max-width: 768px;
+	margin: 0 auto;
 }
 
 p {
 	margin: 0 0 5px;
 }
+.bayan {
+	padding: 0px 15px;
+}
+.bayan-item {
+	border-top: 1px dotted teal;
+}
+
+.item-input {
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+.item-input:checked ~ .item-content {
+	display: block;
+}
+
+.item-title {
+	display: block;
+	cursor: pointer;
+	padding: 10px;
+	font-weight: 700;
+}
+
+.item-title:hover ~ .item-content {
+	display: block;
+	/* max-height: 100%; */
+}
+.item-content {
+	display: none;
+	text-align: center;
+	/* max-height: 0;
+	overflow: hidden;
+	transition: all 0.5s ease 0s; */
+}
+
