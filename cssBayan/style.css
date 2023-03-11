@@ -1,74 +1,70 @@
-*,
-*::before,
-*::after {
+* {
 	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+h1 {
+	margin: 1.5rem 0;
 }
 
 h3 {
-	margin: 10px 0;
+	margin: 1rem 0;
 }
 
 body {
 	font-family: Arial, sans-serif;
-	font-size: 16px;
+	font-size: 0.8rem;
 	line-height: 150%;
 	background-color: aliceblue;
-	max-width: 768px;
+	max-width: 100vw;
 	margin: 0 auto;
 }
 
 .bayan {
-	padding: 0px 15px;
-}
-
-.bayan:hover .bayan-item .item-title .title img {
-	opacity: 1;
-}
-.bayan:hover .bayan-item .item-title .title h3 {
-	color: black;
+	padding: 0 0.8rem;
 }
 
 .bayan-item {
-	border-top: 1px dotted teal;
+	border-top: 0.05rem dotted teal;
 }
 
 .item-input {
 	width: 0;
 	height: 0;
-	position: absolute;
+	appearance: none;
+	-webkit-appearance: none;
+	/* !не очень хорошо использовать display: none .... но  абсолютное позиционирование нельзя использовать по ТЗ*/
+	display: none; 
 }
 
 .item-input:checked ~ .item-title .item-content img {
-	height: 200px;
-	margin: 10px;
+	height: 12.5rem;
+	width: 100%;
+	object-fit: contain;
+	margin: 0.8rem 0;
 }
+
 .item-input:checked ~ .item-title > .title img  {
 	transform: rotate(0deg);
 }
+
 .item-input:checked ~ .item-title > .title h3  {
 	color: black;
 }
 
 .item-title {
-	position: relative;
 	display: block;
 	cursor: pointer;
-	padding: 0 10px;
+	padding: 0 0.8rem;
 	font-weight: 700;
 }
+
 .title {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
-
-.item-title:hover .item-content img{
-	height: 200px;
-	margin: 10px;
-}
-
-.item-title:hover .title img {
-	transform: rotate(0deg);
 }
 
 .item-content {
@@ -76,6 +72,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
 .item-content img {
 	height: 0;
 	text-align: center;
@@ -91,4 +88,40 @@ body {
 .title h3 {
 	color: blue;
 	transition: all 0.3s ease 0s;
+}
+
+/* По ТЗ ховер эфффект применяется только к устройствам которые его поддерживают */
+@media (any-hover: hover) {
+
+	.bayan:hover .bayan-item .item-title .title img {
+		opacity: 1;
+	}
+	
+	.bayan:hover .bayan-item .item-title .title h3 {
+		color: black;
+	}
+
+	.item-title:hover .item-content img{
+		height: 12.5rem;
+		margin: 0.8rem 0;
+	}
+	
+	.item-title:hover .title img {
+		transform: rotate(0deg);
+	}
+}
+
+/* Использован подход mobile-fitst */
+@media (min-width: 480px) {
+  body {
+		font-size: 1.2rem;
+    max-width: 80vw;
+  }
+}
+
+@media (min-width: 821px) {
+  body {
+		font-size: 1.5rem;
+    max-width: 80vw;
+  }
 }
