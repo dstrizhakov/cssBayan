@@ -1,8 +1,8 @@
 * {
 	box-sizing: border-box;
-	padding: 0px;
-	margin: 0px;
-	border: 0px;
+	padding: 0;
+	margin: 0;
+	border: 0;
 }
 
 h1 {
@@ -54,6 +54,7 @@ body {
 	color: black;
 }
 
+
 .item-title {
 	display: block;
 	cursor: pointer;
@@ -90,6 +91,7 @@ body {
 	transition: all 0.3s ease 0s;
 }
 
+
 /* По ТЗ ховер эфффект применяется только к устройствам которые его поддерживают */
 @media (any-hover: hover) {
 
@@ -109,6 +111,13 @@ body {
 	.item-title:hover .title img {
 		transform: rotate(0deg);
 	}
+}
+
+.item-title:active > .title h3  {
+	filter: brightness(0.8) contrast(0.1);
+}
+.item-title:active > .item-content img  {
+	filter: blur(5px);
 }
 
 /* Использован подход mobile-fitst */
